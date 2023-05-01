@@ -1,14 +1,25 @@
-#ifndef GET_NEXT_LINE
-#define GET_NEXT_LINE
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agoujdam <agoujdam@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/01 18:31:37 by agoujdam          #+#    #+#             */
+/*   Updated: 2023/05/01 18:31:38 by agoujdam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef BUFFER_SIZE
-#define BUFFER_SIZE 1000
-#endif
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
 
+# include <fcntl.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 char	*get_next_line(int fd);
 char	*ft_read(int fd, char *str);

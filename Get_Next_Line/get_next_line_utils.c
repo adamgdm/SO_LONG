@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agoujdam <agoujdam@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/01 18:30:56 by agoujdam          #+#    #+#             */
+/*   Updated: 2023/05/01 18:31:01 by agoujdam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 size_t	ft_strlen(const char *s)
@@ -12,12 +24,12 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-typedef struct t_lens 
+typedef struct t_lens
 {
-	int len_s1;
-	int len_s2;
-	int total;
-}	t_len;
+	int	len_s1;
+	int	len_s2;
+	int	total;
+}		t_len;
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -65,7 +77,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 char	*ft_strjoin(char *s1, char *s2, int i, int j)
 {
 	char	*new;
-	t_len		x;
+	t_len	x;
 
 	if (!s2)
 		return (NULL);

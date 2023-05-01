@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agoujdam <agoujdam@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/01 18:31:47 by agoujdam          #+#    #+#             */
+/*   Updated: 2023/05/01 22:47:54 by agoujdam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 char	*get_next_line(int fd)
@@ -30,16 +42,16 @@ char	*ft_read(int fd, char *str)
 		i = read(fd, buffer, BUFFER_SIZE);
 		if (i == -1)
 		{
-			free (str);
-			free (buffer);
+			free(str);
+			free(buffer);
 			return (NULL);
 		}
 		buffer[i] = '\0';
 		tmp = str;
 		str = ft_strjoin(str, buffer, 0, 0);
-		free (tmp);
+		free(tmp);
 	}
-	free (buffer);
+	free(buffer);
 	return (str);
 }
 
@@ -72,8 +84,8 @@ char	*ft_return(char *str, int i, int j)
 
 char	*ft_rm(char *str, int i, int j)
 {
-	char 	*rest;
-	
+	char	*rest;
+
 	while (str[i] && str[i] != '\n')
 		i++;
 	if (str[i] == '\0')
@@ -85,7 +97,7 @@ char	*ft_rm(char *str, int i, int j)
 	rest = malloc(sizeof(char) * (ft_strlen(str) - i + 1));
 	if (!rest)
 	{
-		free (str);
+		free(str);
 		return (NULL);
 	}
 	while (str[i])
@@ -95,20 +107,20 @@ char	*ft_rm(char *str, int i, int j)
 		i++;
 	}
 	rest[j] = '\0';
-	free (str);
+	free(str);
 	return (rest);
 }
 /*
-int main()
+int	main(void)
 {
 	int fd = open("txt.txt", O_RDONLY);
 
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
+	ft_printf("%s", get_next_line(fd));
+	ft_printf("%s", get_next_line(fd));
+	ft_printf("%s", get_next_line(fd));
+	ft_printf("%s", get_next_line(fd));
+	ft_printf("%s", get_next_line(fd));
+	ft_printf("%s", get_next_line(fd));
 
 
 }[33~**/
