@@ -35,7 +35,7 @@ char	**ft_fill_map(char *name, int line_count)
 
 	map = (char **)malloc(sizeof(char *) * (line_count + 1));
 	if (!map)
-		return (0 * ft_printf("Error : Failed Allocation!\n"));
+		return (0);
 	i = 0;
 	fd = open(name, O_RDONLY, 777);
 	while (i < line_count)
