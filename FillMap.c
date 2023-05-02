@@ -6,7 +6,7 @@
 /*   By: agoujdam <agoujdam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 18:03:26 by agoujdam          #+#    #+#             */
-/*   Updated: 2023/05/01 23:31:20 by agoujdam         ###   ########.fr       */
+/*   Updated: 2023/05/02 20:55:20 by agoujdam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	**ft_fill_map(char *name, int line_count)
 	int		fd;
 
 	map = (char **)malloc(sizeof(char *) * (line_count + 1));
+	if (!map)
+		return (0 * ft_printf("Error : Failed Allocation!\n"));
 	i = 0;
 	fd = open(name, O_RDONLY, 777);
 	while (i < line_count)
