@@ -6,11 +6,12 @@
 /*   By: agoujdam <agoujdam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 18:44:15 by agoujdam          #+#    #+#             */
-/*   Updated: 2023/05/01 22:47:49 by agoujdam         ###   ########.fr       */
+/*   Updated: 2023/05/02 20:28:54 by agoujdam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <mlx.h>
 
 void	ft_check_print(int a, int i)
 {
@@ -95,9 +96,9 @@ void	ft_bismillah(char *name, void *mlx_inst, int line_count)
 	params.mlx_inst = mlx_inst;
 	params.win_inst = win_inst;
 	params.map = (void *)&map;
+	ft_put_images(map, a, a.win_inst, mlx_inst);
 	mlx_hook(a.win_inst, 2, 0, ft_key_hook, &params);
 	mlx_hook(a.win_inst, 17, 0, ft_close_hook, &params);
-	ft_put_images(map, a, a.win_inst, mlx_inst);
 	ft_printf("Counter = 0\n");
 	mlx_loop(mlx_inst);
 }

@@ -6,7 +6,7 @@
 /*   By: agoujdam <agoujdam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 20:11:35 by agoujdam          #+#    #+#             */
-/*   Updated: 2023/05/01 23:01:28 by agoujdam         ###   ########.fr       */
+/*   Updated: 2023/05/02 20:41:37 by agoujdam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,9 @@ void		*ft_rt(char **map, int a, void *mlx_inst);
 int			ft_mp(t_indexes a, void *img, int x, int y);
 void		ft_put_images(char **map, t_indexes a, void *wi, void *mi);
 int			ft_strlen_no_nw(char *s);
-char		*ft_cat(const char *str1, const char *str2);
 int			ft_check_for_ones(char *line, int lines, int line_count);
 int			ft_check_zocep(char *line, int i, int j);
-void		ft_negative_fd(int fd);
+void		ft_negative_fd(char *str, int fd);
 int			ft_cloc_x(char **map, char c);
 int			ft_cloc_y(char **map, char c);
 int			ft_check_last_line(char *str);

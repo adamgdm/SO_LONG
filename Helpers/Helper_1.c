@@ -6,7 +6,7 @@
 /*   By: agoujdam <agoujdam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 18:30:40 by agoujdam          #+#    #+#             */
-/*   Updated: 2023/05/01 20:27:15 by agoujdam         ###   ########.fr       */
+/*   Updated: 2023/05/02 20:42:02 by agoujdam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,35 +28,6 @@ int	ft_strlen_no_nw(char *s)
 		i++;
 	}
 	return (i - j);
-}
-
-char	*ft_cat(const char *str1, const char *str2)
-{
-	int		len1;
-	int		len2;
-	char	*result;
-	int		i;
-	int		j;
-
-	len1 = (int)ft_strlen(str1);
-	len2 = (int)ft_strlen(str2);
-	result = (char *)malloc((len1 + len2 + 1) * sizeof(char));
-	if (!result)
-		return (0);
-	i = 0;
-	while (i < len1)
-	{
-		result[i] = str1[i];
-		i++;
-	}
-	j = 0;
-	while (j < len2)
-	{
-		result[i + j] = str2[j];
-		j++;
-	}
-	result[i + j] = '\0';
-	return (result);
 }
 
 int	ft_check_for_ones(char *line, int lines, int line_count)
@@ -99,11 +70,12 @@ int	ft_check_zocep(char *line, int i, int j)
 	return (1);
 }
 
-void	ft_negative_fd(int fd)
+void	ft_negative_fd(char *str, int fd)
 {
 	if (fd < 0)
 	{
 		close(fd);
+		ft_printf("Error : No File %s!\n", str);
 		exit(0);
 	}
 }

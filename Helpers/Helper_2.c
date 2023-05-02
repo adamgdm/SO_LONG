@@ -6,7 +6,7 @@
 /*   By: agoujdam <agoujdam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 18:28:01 by agoujdam          #+#    #+#             */
-/*   Updated: 2023/05/01 23:33:55 by agoujdam         ###   ########.fr       */
+/*   Updated: 2023/05/02 20:23:38 by agoujdam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_check_last_line(char *str)
 
 	line_count = 0;
 	fd = open(str, O_RDONLY);
-	ft_negative_fd(fd);
+	ft_negative_fd(str, fd);
 	if (!read(fd, buf, 1))
 		return (ft_printf("Error : Invalid Map!\n"));
 	while (read(fd, buf, 1))

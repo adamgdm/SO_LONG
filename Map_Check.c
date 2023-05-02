@@ -6,7 +6,7 @@
 /*   By: agoujdam <agoujdam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 20:24:45 by agoujdam          #+#    #+#             */
-/*   Updated: 2023/05/01 23:34:35 by agoujdam         ###   ########.fr       */
+/*   Updated: 2023/05/02 20:06:25 by agoujdam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_check_char_count(char *str)
 
 	line_count = 0;
 	fd = open(str, O_RDONLY);
-	ft_negative_fd(fd);
+	ft_negative_fd(str, fd);
 	if (!read(fd, buf, 1))
 		return (line_count);
 	if (buf[0] != '\n')
